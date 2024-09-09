@@ -1,5 +1,7 @@
 ---
+import Divider from "../components/Divider.astro";
 import Header from "../components/header/Header.astro";
+import Name from "../components/header/Name.astro";
 import "../styles/global.css";
 interface Props {
   title: string;
@@ -24,17 +26,14 @@ const { title } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
     />
-    <div class="flex-col w-6/12 text-amber-700">
-      <div class="flex justify-start text-4xl mt-20 my-12">
-        <p>[Kevin Kwon]</p>
+    <div class="flex-col w-5/12 text-slate-600">
+      <div class="flex justify-between mt-20 mt-18 mb-12 items-center">
+        <Name />
+        <Header />
       </div>
-      <div class="flex flex-col items-center">
-        <div class="pb-12">
-          <Header />
-        </div>
-        <div class="w-full flex justify-start">
-          <slot />
-        </div>
+      <Divider />
+      <div class="flex items-center w-full justify-start">
+        <slot />
       </div>
     </div>
   </body>

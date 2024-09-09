@@ -1,0 +1,10 @@
+---
+const { elementName, path } = Astro.props;
+---
+
+<style>
+  a:hover {
+    color: #f97316;
+  }
+</style>
+<a class="my-3 mx-5" href={path}>{elementName}</a>

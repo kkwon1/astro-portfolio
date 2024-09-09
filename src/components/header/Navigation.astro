@@ -1,9 +1,11 @@
 ---
 import HeaderElement from "./HeaderElement.astro";
+import ThemeIcon from "../ThemeIcon.astro";
 ---
 
-<div class="text-xl">
+<div class="flex items-center text-xl">
   <HeaderElement elementName="Posts" path="/posts/" />
   <HeaderElement elementName="About" path="/about/" />
   <HeaderElement elementName="Experience" path="/experience/" />
+  <ThemeIcon />
 </div>

@@ -27,20 +27,22 @@ const { title } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
     />
-    <div class="flex flex-col w-5/12 text-slate-600 justify-between">
+    <div class="flex flex-col w-10/12 text-slate-600 justify-between sm:w-5/12">
       <div>
-        <div class="flex justify-between mt-20 mt-18 mb-12 items-center">
+        <div
+          class="flex flex-col justify-between mt-20 mt-18 mb-12 items-center header sm:justify-between sm:flex-row"
+        >
           <Name />
           <Header />
         </div>
         <Divider />
-        <div class="flex items-center w-full justify-start">
+        <div class="flex items-center w-full justify-start text-md">
           <slot />
         </div>
       </div>
-      <div >
+      <div>
         <Divider />
-        <Footer/>
+        <Footer />
       </div>
     </div>
   </body>

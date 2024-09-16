@@ -11,3 +11,16 @@ a:hover {
 .social-icon:hover {
   color: #f97316;
 }
+
+.rotate-icon:hover {
+  transform: rotate(5deg);
+}
+
+body {
+  overflow-y: scroll;
+}
+
+/* For Chrome, Safari, and Edge */
+::-webkit-scrollbar {
+  background-color: #fffdf7; /* Background color of the scrollbar */
+}

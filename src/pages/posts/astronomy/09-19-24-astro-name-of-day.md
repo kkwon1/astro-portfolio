@@ -16,7 +16,7 @@ celestial bodies in our solar system. I brushed it off without much thought.
 It wasn't until I got a bit older that I noticed the English language _also_ had a similar pattern. The name of each day in the week had some
 mapping to celestial bodies in our solar system! (Perhaps it should concern me I did not notice "Sunday" sooner).
 
-One evening I chose to sit down and learn about the roots and origins of these names. I find it fascinating that you can find trace back these patterns across languages - and the connections run deeper than one might think.
+One evening I chose to sit down and learn about the roots and origins of these names. I find it fascinating that you can trace back these patterns across languages - and the connections run deeper than one might think.
 
 ## Names of the Days of the Week
 

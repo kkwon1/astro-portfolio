@@ -1,5 +1,15 @@
 ---
-const { title, url } = Astro.props;
+const { title, url, date } = Astro.props;
+
+const formattedDate = new Date(date).toLocaleDateString("en-US", {
+  month: "short",
+  day: "numeric",
+});
 ---
 
-<li><a href={url}>- {title}</a></li>
+<div class="flex text-sm justify-between">
+  <li class="w-10/12 pr-5">
+    <a href={url}>{title}</a>
+  </li>
+  <p>{formattedDate}</p>
+</div>

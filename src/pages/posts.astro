@@ -7,12 +7,17 @@ const astroPosts = await Astro.glob("./posts/astronomy/*.md");
 
 <Layout title="Posts">
   <body>
-    <ul>
-      {
-        astroPosts.map((post) => (
-        <BlogPost url={post.url} title={post.frontmatter.title} />
-        ))
-      }
-    </ul>
+    <p class="text-2xl pb-3 font-bold">2024</p>
+    {
+      astroPosts.map((post) => (
+        <div>
+          <BlogPost
+            url={post.url}
+            title={post.frontmatter.title}
+            date={post.frontmatter.pubDate}
+          />
+        </div>
+      ))
+    }
   </body>
 </Layout>

@@ -3,8 +3,12 @@ import Layout from "./Layout.astro";
 
 const { frontmatter } = Astro.props;
 ---
+
 <Layout title={frontmatter.title}>
-  <article class="prose prose-sm text-xs w-full max-w-screen-2xl xl:prose-base">
+  <a href="/posts" class="text-xs xl:text-sm">&#8592; Back to Posts</a>
+  <article
+    class="prose prose-sm text-xs w-full max-w-screen-2xl xl:prose-base pt-5"
+  >
     <slot />
   </article>
 </Layout>

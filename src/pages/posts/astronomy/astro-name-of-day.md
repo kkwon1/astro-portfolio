@@ -1,7 +1,7 @@
 ---
 layout: ../../../layouts/MarkdownPostLayout.astro
 title: "Astronomical Names of the Day of the Week"
-pubDate: 2024-09-19
+pubDate: 2024-09-19 22:02
 author: "Kevin Kwon"
 tags: ["astronomy", "personal"]
 ---

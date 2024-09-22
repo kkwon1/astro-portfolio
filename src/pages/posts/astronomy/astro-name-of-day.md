@@ -4,6 +4,7 @@ title: "Astronomical Names of the Day of the Week"
 pubDate: 2024-09-19 22:02
 author: "Kevin Kwon"
 tags: ["astronomy", "personal"]
+description: "A short journey through the origins of how the names of the days of the week came to be."
 ---
 
 # Astronomical Names of the Day of the Week
@@ -16,11 +17,11 @@ celestial bodies in our solar system. I brushed it off without much thought.
 It wasn't until I got a bit older that I noticed the English language _also_ had a similar pattern. The name of each day in the week had some
 mapping to celestial bodies in our solar system! (Perhaps it should concern me I did not notice "Sunday" sooner).
 
-One evening I chose to sit down and learn about the roots and origins of these names. I find it fascinating that you can trace back these patterns across languages - and the connections run deeper than one might think.
+One evening I sat down and decided to learn about the roots and origins of these names. I find it fascinating that you can see these patterns across so many languages - and the connections run deeper than one might think.
 
 ## Names of the Days of the Week
 
-Here we list the Korean names of the days, the Korean names of the related celestial bodies, and the corresponding English names. The Korean names originate from China as we reference the Chinese characters of elemental forces of nature such as Fire, Water, Wood, Metal and Earth.
+Here we list the Korean names of the days, the Korean names of the celestial bodies, and the corresponding English names. The Korean names originate from China as we reference the Chinese characters of the elemental forces of nature such as Fire, Water, Wood, Metal and Earth (The [Wuxing](<https://en.wikipedia.org/wiki/Wuxing_(Chinese_philosophy)>) system).
 
 Although the historical timeline is unclear, it is believed that the seven-day week system can be traced back to ancient Mesopotamia. The system then spread to the Greeks and Romans, which was passed along to China, and finally Korea [[1](#references)].
 
@@ -72,7 +73,7 @@ As I was reading about this topic, I started thinking about the French and Spani
 
 ## Conclusion
 
-We probably take these names for granted and don't give a second thought in our day-to-day (pun intended) lives, but it was fun to learn about this topic! To think that these names cross cultural, religious, and national boundaries across thousands of years is some food for thought.
+We probably take these names for granted and don't give a second thought in our day-to-day (pun intended) lives, but it was fun to learn about this topic. To think that these names cross cultural, religious, and national boundaries across thousands of years is some food for thought.
 
 Thanks for reading!
 

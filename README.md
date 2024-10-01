@@ -1,5 +1,7 @@
 # Portfolio
 
+Link to portfolio -> https://astro.kkwon.dev/
+
 This repository hosts the code for my static personal portfolio page. You can find my older portfolio [here](https://github.com/kkwon1/portfolio)
 
 I wanted to re-design my portfolio with a more minimalistic look, with an emphasis on my posts and writing.

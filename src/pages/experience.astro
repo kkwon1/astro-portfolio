@@ -1,5 +1,104 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import Imperva from "../resources/imperva-logo.png";
+import Amazon from "../resources/amazon-icon.svg";
 ---
 
-<Layout title="Experience">Under Construction 🚧</Layout>
+<Layout title="Experience">
+  <h1
+    class="flex text-xl font-bold pb-8 justify-center xl:text-2xl xl:justify-start"
+  >
+    Professional
+  </h1>
+
+  <div class="pb-5 xl:pb-10">
+    <div>
+      <h2 class="flex items-center justify-between">
+        <div class="flex items-center text-lg xl:text-xl">
+          <Image class="w-9 h-9 mr-5" src={Imperva} alt="Imperva Logo" />
+          <a href="https://www.imperva.com/">Imperva</a>
+        </div>
+        <span class="text-xs xl:text-base">May 2023 - Present</span>
+      </h2>
+      <div class="flex justify-between pl-1 pt-2">
+        <p class="text-sm font-bold xl:text-base">Senior Software Engineer</p>
+      </div>
+    </div>
+    <div>
+      <p class="text-xs pl-1 pt-3 xl:text-sm">
+        I have lead, designed, and executed on multiple cross-organization
+        projects. I provide deeper knowledge surrounding our AWS infrastructure,
+        and help make high-level technical decisions across the team. In
+        training to be the security champion of the team.
+        <ul class="list-disc mt-5 text-xs pl-5 xl:text-sm">
+          <li class="mb-1">
+            Certified the <a
+              class="underline font-bold"
+              target="_blank"
+              href="https://www.imperva.com/products/client-side-protection/"
+              >Client-Side Protection</a
+            > service for PCI DSS v4.0
+          </li>
+          <li class="mb-1">
+            Migrated over 200 Cassandra tables across multiple regions with zero
+            downtime
+          </li>
+          <li class="mb-1">
+            Re-designed core algorithms and re-architected key components of the
+            system to improve the efficacy of our service
+          </li>
+        </ul>
+      </p>
+    </div>
+  </div>
+
+  <div class="pb-5 xl:pb-10">
+    <div>
+      <h2 class="flex items-center justify-between">
+        <div class="flex items-center text-lg xl:text-xl">
+          <Image class="w-9 mr-5" src={Amazon} alt="Amazon Logo" />
+          <a href="https://aws.amazon.com/">Amazon/AWS</a>
+        </div>
+        <span class="text-xs xl:text-base">Jul 2020 - May 2023</span>
+      </h2>
+      <div class="flex justify-between pl-1 pt-2">
+        <p class="text-sm font-bold xl:text-base">
+          Software Development Engineer I & II
+        </p>
+      </div>
+    </div>
+    <div>
+      <p class="text-xs pl-1 pt-3 xl:text-sm">
+        I was on the Amazon Cognito team building and maintaining core services
+        for authentication and authorization, handling scale of billions of
+        requests per day globally.
+        <br />
+        <br />
+        Prior to Amazon Cognito I was on the Tax Services team, building testing
+        tools for internal business users.
+        <ul class="list-disc mt-5 text-xs pl-5 xl:text-sm">
+          <li class="mb-1">
+            Designed and launched the <a
+              href="https://aws.amazon.com/about-aws/whats-new/2022/05/amazon-cognito-risk-evaluation-advanced-security-features/"
+              class="underline font-bold"
+              target="_blank">IP Address propagation feature</a
+            > for unauthenticated requests to improve risk evaluation
+          </li>
+          <li class="mb-1">
+            Automated region launch process for a microservice to save 50%
+            developer time using CDK and helped launch <a
+              href="https://aws.amazon.com/about-aws/whats-new/2022/12/amazon-cognito-europe-milan-region/"
+              class="underline font-bold"
+              target="_blank">Amazon Cognito in the Milan region</a
+            >
+          </li>
+          <li class="mb-1">
+            Designed and implemented the algorithm to detect User Enumeration
+            bot activity
+          </li>
+        </ul>
+      </p>
+    </div>
+  </div>
+</Layout>

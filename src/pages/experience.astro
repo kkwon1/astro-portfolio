@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
+import Stripe from "../resources/stripe-icon.jpg";
 import Imperva from "../resources/imperva-logo.png";
 import Amazon from "../resources/amazon-icon.svg";
 ---
@@ -16,10 +17,32 @@ import Amazon from "../resources/amazon-icon.svg";
     <div>
       <h2 class="flex items-center justify-between">
         <div class="flex items-center text-lg xl:text-xl">
+          <Image
+            class="w-9 h-9 mr-5 rounded-md"
+            src={Stripe}
+            alt="Stripe Logo"
+          />
+          <a href="https://stripe.com/en-ca">Stripe</a>
+        </div>
+        <span class="text-xs xl:text-base">Jan 2025 - Present</span>
+      </h2>
+      <div class="flex justify-between pl-1 pt-2">
+        <p class="text-sm font-bold xl:text-base">Software Engineer</p>
+      </div>
+    </div>
+    <div>
+      <p class="text-xs pl-1 pt-3 xl:text-sm">Building... 👷🚧</p>
+    </div>
+  </div>
+
+  <div class="pb-5 xl:pb-10">
+    <div>
+      <h2 class="flex items-center justify-between">
+        <div class="flex items-center text-lg xl:text-xl">
           <Image class="w-9 h-9 mr-5" src={Imperva} alt="Imperva Logo" />
           <a href="https://www.imperva.com/">Imperva</a>
         </div>
-        <span class="text-xs xl:text-base">May 2023 - Present</span>
+        <span class="text-xs xl:text-base">May 2023 - Dec 2024</span>
       </h2>
       <div class="flex justify-between pl-1 pt-2">
         <p class="text-sm font-bold xl:text-base">Senior Software Engineer</p>

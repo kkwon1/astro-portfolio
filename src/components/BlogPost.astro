@@ -4,6 +4,7 @@ const { title, url, date } = Astro.props;
 const formattedDate = new Date(date).toLocaleDateString("en-US", {
   month: "short",
   day: "numeric",
+  year: "numeric",
 });
 ---
 

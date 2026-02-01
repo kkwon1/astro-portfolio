@@ -3,19 +3,35 @@ import Layout from "../layouts/Layout.astro";
 import BlogPost from "../components/BlogPost.astro";
 
 const astroPosts = await Astro.glob("./posts/astronomy/*.md");
+const reflectionPosts = await Astro.glob("./posts/reflections/*.md");
+const allPosts = [...astroPosts, ...reflectionPosts].sort(
+  (a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime()
+);
+
+const postsByYear = allPosts.reduce<Record<string, typeof allPosts>>((acc, post) => {
+  const year = new Date(post.frontmatter.pubDate).getFullYear().toString();
+  if (!acc[year]) acc[year] = [];
+  acc[year].push(post);
+  return acc;
+}, {});
+const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
 ---
 
 <Layout title="Posts">
   <body>
-    <p class="text-2xl pb-3 font-bold">2024</p>
     {
-      astroPosts.map((post) => (
-        <div>
-          <BlogPost
-            url={post.url}
-            title={post.frontmatter.title}
-            date={post.frontmatter.pubDate}
-          />
+      years.map((year) => (
+        <div class="pb-8">
+          <p class="text-2xl pb-3 font-bold">{year}</p>
+          {postsByYear[year].map((post) => (
+            <div>
+              <BlogPost
+                url={post.url}
+                title={post.frontmatter.title}
+                date={post.frontmatter.pubDate}
+              />
+            </div>
+          ))}
         </div>
       ))
     }

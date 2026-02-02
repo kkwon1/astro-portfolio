@@ -44,7 +44,7 @@ In my previous jobs, I never had a chance to design and build a completely new g
 
 It was a new challenge for me to think about how to shape and design something on a blank canvas. In some ways, it's easier to have the constraints of an existing system and build around them. I find that having this blank canvas can sometimes induce analysis paralysis.
 
-It helped that we have a bias for action and a propensity for "tracer bullet" implementations to kick things off. We also leveraged existing patterns and conventions to set the initial framework.
+It helped that we have a bias for action and a propensity for ["tracer bullet"](https://medium.com/@remind.stephen.to.do.sth/targeting-success-the-power-of-tracer-bullets-in-pragmatic-software-engineering-cd6c53758986) implementations to kick things off. We also leveraged existing patterns and conventions to set the initial framework.
 
 From my observations, the key was to do deep initial user research, including gathering concrete use cases. From there, it was about understanding the product deeply and shaping the API by obsessing over developer ergonomics. All that being said, it is an iterative process where nothing is truly set in stone.
 

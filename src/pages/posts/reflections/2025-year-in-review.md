@@ -65,6 +65,7 @@ Finally, near the end of the year I picked up Claude Code and that felt like a g
 
 The bottleneck now is the review process. I have much more code to review for myself, and in general more code to review from others as well. This shifted my focus from writing code to reasoning about correctness, scope, and long-term maintenance.
 
+**[Update 2/28/16]** - Since I published this post, [Stripe has published their own post about Minions](https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents), which is an internal coding agent tool useful for one-shotting a task. I use minions quite extensively, starting out with a long prompt with as much context as possible (providing documentation and code pointers) and steering it along the way. It generally does an amazing job. Minions are already integrated with many of our Stripe internal tooling via MCP.
 
 ## Onwards and Upwards
 This post was a brain dump, and a chance for me to reflect on the year of 2025. A lot has happened, and the way I work has completely changed in the last year (compared to the relatively stable way I worked for the previous few years). I’m expecting more changes ahead, and I'm hoping to document them more intentionally here.

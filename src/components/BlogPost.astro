@@ -1,5 +1,13 @@
 ---
-const { title, url, date } = Astro.props;
+interface Props {
+  title: string;
+  url: string;
+  date: string;
+  tags?: string[];
+}
+
+const { title, url, date, tags = [] } = Astro.props;
+const isBookReview = tags.includes("book review");
 
 const dateObj = new Date(date);
 const formattedDateShort = dateObj.toLocaleDateString("en-US", {
@@ -16,6 +24,11 @@ const formattedDateFull = dateObj.toLocaleDateString("en-US", {
 <div class="flex text-sm justify-between">
   <li class="w-10/12 pr-5">
     <a href={url}>{title}</a>
+    {isBookReview && (
+      <span class="ml-2 inline-block rounded-full bg-slate-200 px-2 py-0.5 text-xs text-slate-700">
+        book review
+      </span>
+    )}
   </li>
   <p>
     <span class="xl:hidden">{formattedDateShort}</span>

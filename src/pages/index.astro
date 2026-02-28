@@ -3,18 +3,19 @@ import Layout from "../layouts/Layout.astro";
 
 const astroPosts = await Astro.glob("./posts/astronomy/*.md");
 const reflectionPosts = await Astro.glob("./posts/reflections/*.md");
-const allPosts = [...astroPosts, ...reflectionPosts].sort(
+const bookPosts = await Astro.glob("./posts/books/**/*.md");
+const allPosts = [...astroPosts, ...reflectionPosts, ...bookPosts].sort(
   (a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime()
 );
 const latestPost = allPosts[0];
 
-const bookEntries = await Astro.glob("./books/**/*.md");
-const sortedBooks = [...bookEntries].sort(
-  (a, b) =>
-    new Date(b.frontmatter.pubDate).getTime() -
-    new Date(a.frontmatter.pubDate).getTime()
-);
-const latestBook = sortedBooks[0];
+const latestBook = [...allPosts]
+  .filter((p) => p.frontmatter.tags?.includes("book review"))
+  .sort(
+    (a, b) =>
+      new Date(b.frontmatter.pubDate).getTime() -
+      new Date(a.frontmatter.pubDate).getTime()
+  )[0];
 ---
 
 <Layout title="Kevin Kwon">

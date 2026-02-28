@@ -1,12 +1,13 @@
 ---
-layout: ../../../layouts/BookPostLayout.astro
-title: "Going Nuclear: How the Atom Will Save the World"
+layout: ../../../../layouts/BookPostLayout.astro
+title: "Going Nuclear"
 bookAuthor: "Tim Gregory"
 pubDate: 2026-02-28 14:35
 description: "My thoughts on the book Going Nuclear"
+tags: ["book review"]
 ---
 
-[Going Nuclear](https://www.goodreads.com/book/show/237616230-going-nuclear)
+[Going Nuclear: How the Atom Will Save the World](https://www.goodreads.com/book/show/237616230-going-nuclear)
 
 ## Introduction
 Early in the year I found this book at the library by pure chance and ended up loving it. I even decided to purchase a copy for myself to keep. Dr. Tim Gregory does an excellent job of communicating the difficult ideas of nuclear physics in a digestible way. After reading it, I feel genuinely optimistic about the role nuclear energy can play in a net-zero future.
@@ -24,7 +25,7 @@ Gregory then explores why renewable energy sources (solar, wind) are crucial, bu
 That all being said, I am still very much in support of all forms of clean energy - but it is good to understand the nuances and what it actually means to have a capacity of X GW compared to what is actually generated.
 
 ## Nuclear Waste
-Gregory discusses the by-product of nuclear energy generation. First, how it is safely stored away from humans, and second, how some of that “waste” can be reused. The book suggests that the term "nuclear waste" is a misnomer. The by-product may be unwanted, but certainly not unusable.
+Gregory discusses the by-product of nuclear energy generation. First, how it is safely stored away from humans, and second, how some of that "waste" can be reused. The book suggests that the term "nuclear waste" is a misnomer. The by-product may be unwanted, but certainly not unusable.
 
 The chapter goes into depth about how the nuclear by-product can be used to fuel _other_ types of nuclear reactors. For example, used fuel rods can contain about 96% of the original Uranium [[3](#references)], which can be enriched and re-used as fuel. Traditional nuclear reactors also produce plutonium, which can be used as a fuel source for different types of reactors [[4](#references)].
 

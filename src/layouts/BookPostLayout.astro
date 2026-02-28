@@ -5,7 +5,12 @@ const { frontmatter } = Astro.props;
 ---
 
 <Layout title={frontmatter.title}>
-  <a href="/books/" class="text-xs xl:text-sm">&#8592; Back to Books</a>
+  <a href="/posts/" class="text-xs xl:text-sm">&#8592; Back to Posts</a>
+  {frontmatter.bookAuthor && (
+    <p class="text-xs xl:text-sm text-slate-600 pt-1">
+      by {frontmatter.bookAuthor}
+    </p>
+  )}
   <article
     class="prose prose-sm text-xs w-full max-w-screen-2xl xl:prose-base pt-5"
   >

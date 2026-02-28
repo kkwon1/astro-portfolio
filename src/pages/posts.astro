@@ -27,7 +27,7 @@ const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
           {postsByYear[year].map((post) => (
             <div class="mb-4">
               <BlogPost
-                url={post.url}
+                url={post.url ?? ""}
                 title={post.frontmatter.title}
                 date={post.frontmatter.pubDate}
                 tags={post.frontmatter.tags}

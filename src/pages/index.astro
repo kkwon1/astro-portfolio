@@ -7,7 +7,13 @@ const bookPosts = await Astro.glob("./posts/books/**/*.md");
 const allPosts = [...astroPosts, ...reflectionPosts, ...bookPosts].sort(
   (a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime()
 );
-const latestPost = allPosts[0];
+const latestPost = [...allPosts]
+  .filter((p) => p.frontmatter.tags?.includes("personal"))
+  .sort(
+    (a, b) =>
+      new Date(b.frontmatter.pubDate).getTime() -
+      new Date(a.frontmatter.pubDate).getTime()
+  )[0];
 
 const latestBook = [...allPosts]
   .filter((p) => p.frontmatter.tags?.includes("book review"))

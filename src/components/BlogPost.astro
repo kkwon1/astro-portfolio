@@ -8,6 +8,7 @@ interface Props {
 
 const { title, url, date, tags = [] } = Astro.props;
 const isBookReview = tags.includes("book review");
+const isPersonal = tags.includes("personal");
 
 const dateObj = new Date(date);
 const formattedDateShort = dateObj.toLocaleDateString("en-US", {
@@ -27,6 +28,11 @@ const formattedDateFull = dateObj.toLocaleDateString("en-US", {
     {isBookReview && (
       <span class="ml-2 inline-block rounded-full bg-slate-200 px-2 py-0.5 text-xs text-slate-700">
         book review
+      </span>
+    )}
+    {isPersonal && (
+      <span class="ml-2 inline-block rounded-full bg-slate-200 px-2 py-0.5 text-xs text-slate-700">
+        personal
       </span>
     )}
   </li>

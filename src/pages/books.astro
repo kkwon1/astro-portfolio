@@ -1,0 +1,42 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BlogPost from "../components/BlogPost.astro";
+
+const bookEntries = await Astro.glob("./books/**/*.md");
+const sortedBooks = bookEntries.sort(
+  (a, b) =>
+    new Date(b.frontmatter.pubDate).getTime() -
+    new Date(a.frontmatter.pubDate).getTime()
+);
+
+const booksByYear = sortedBooks.reduce<
+  Record<string, typeof sortedBooks>
+>((acc, book) => {
+  const year = new Date(book.frontmatter.pubDate).getFullYear().toString();
+  if (!acc[year]) acc[year] = [];
+  acc[year].push(book);
+  return acc;
+}, {});
+const years = Object.keys(booksByYear).sort((a, b) => Number(b) - Number(a));
+---
+
+<Layout title="Books">
+  <body>
+    {
+      years.map((year) => (
+        <div class="pb-8">
+          <p class="text-2xl pb-3 font-bold">{year}</p>
+          {booksByYear[year].map((book) => (
+            <div>
+              <BlogPost
+                url={book.url}
+                title={book.frontmatter.title}
+                date={book.frontmatter.pubDate}
+              />
+            </div>
+          ))}
+        </div>
+      ))
+    }
+  </body>
+</Layout>

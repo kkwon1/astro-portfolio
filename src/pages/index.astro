@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import BlogPost from "../components/BlogPost.astro";
 
 const astroPosts = await Astro.glob("./posts/astronomy/*.md");
 const reflectionPosts = await Astro.glob("./posts/reflections/*.md");
@@ -7,21 +8,13 @@ const bookPosts = await Astro.glob("./posts/books/**/*.md");
 const allPosts = [...astroPosts, ...reflectionPosts, ...bookPosts].sort(
   (a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime()
 );
-const latestPost = [...allPosts]
-  .filter((p) => p.frontmatter.tags?.includes("personal"))
-  .sort(
-    (a, b) =>
-      new Date(b.frontmatter.pubDate).getTime() -
-      new Date(a.frontmatter.pubDate).getTime()
-  )[0];
+const posts = allPosts
+  .filter((p) => !p.frontmatter.tags?.includes("book review"))
+  .slice(0, 3);
 
-const latestBook = [...allPosts]
+const bookReviews = allPosts
   .filter((p) => p.frontmatter.tags?.includes("book review"))
-  .sort(
-    (a, b) =>
-      new Date(b.frontmatter.pubDate).getTime() -
-      new Date(a.frontmatter.pubDate).getTime()
-  )[0];
+  .slice(0, 3);
 ---
 
 <Layout title="Kevin Kwon">
@@ -39,40 +32,38 @@ const latestBook = [...allPosts]
     I hope you enjoy your time here.
   </p>
 
-  {latestPost && (
+  {posts.length > 0 && (
     <div class="mt-8 pt-8 border-t border-current/20">
-      <p class="text-sm font-bold pb-2">Latest post</p>
-      <a href={latestPost.url} class="underline text-sm hover:opacity-80">
-        {latestPost.frontmatter.title}
-      </a>
-      <p class="text-xs pt-1 opacity-80">
-        {new Date(latestPost.frontmatter.pubDate).toLocaleDateString("en-US", {
-          month: "short",
-          day: "numeric",
-          year: "numeric",
-        })}
-      </p>
+      <p class="text-sm font-bold pb-3">Posts</p>
+      <ul class="space-y-3">
+        {posts.map((post) => (
+          <BlogPost
+            url={post.url ?? ""}
+            title={post.frontmatter.title}
+            date={post.frontmatter.pubDate}
+            tags={post.frontmatter.tags}
+            showTags={false}
+          />
+        ))}
+      </ul>
     </div>
   )}
 
-  {latestBook && (
+  {bookReviews.length > 0 && (
     <div class="mt-8 pt-8 border-t border-current/20">
-      <p class="text-sm font-bold pb-2">Latest book review</p>
-      <a href={latestBook.url} class="underline text-sm hover:opacity-80">
-        {latestBook.frontmatter.title}
-      </a>
-      {latestBook.frontmatter.bookAuthor && (
-        <p class="text-xs pt-0.5 opacity-80">
-          by {latestBook.frontmatter.bookAuthor}
-        </p>
-      )}
-      <p class="text-xs pt-1 opacity-80">
-        {new Date(latestBook.frontmatter.pubDate).toLocaleDateString("en-US", {
-          month: "short",
-          day: "numeric",
-          year: "numeric",
-        })}
-      </p>
+      <p class="text-sm font-bold pb-3">Book reviews</p>
+      <ul class="space-y-3">
+        {bookReviews.map((post) => (
+          <BlogPost
+            url={post.url ?? ""}
+            title={post.frontmatter.title}
+            date={post.frontmatter.pubDate}
+            tags={post.frontmatter.tags}
+            showTags={false}
+            author={post.frontmatter.bookAuthor}
+          />
+        ))}
+      </ul>
     </div>
   )}
 </Layout>

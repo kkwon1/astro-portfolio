@@ -4,9 +4,11 @@ interface Props {
   url: string;
   date: string;
   tags?: string[];
+  showTags?: boolean;
+  author?: string;
 }
 
-const { title, url, date, tags = [] } = Astro.props;
+const { title, url, date, tags = [], showTags = true, author } = Astro.props;
 const isBookReview = tags.includes("book review");
 const isPersonal = tags.includes("personal");
 
@@ -24,13 +26,19 @@ const formattedDateFull = dateObj.toLocaleDateString("en-US", {
 
 <div class="flex text-sm justify-between">
   <li class="w-10/12 pr-5">
-    <a href={url}>{title}</a>
-    {isBookReview && (
+    <a
+      href={url}
+      class="font-medium underline decoration-slate-400 underline-offset-4 hover:decoration-orange-500 focus-visible:text-orange-500 focus-visible:decoration-orange-500 focus-visible:outline-none"
+    >
+      {title}
+    </a>
+    {author && <span class="ml-2 text-xs italic">by {author}</span>}
+    {showTags && isBookReview && (
       <span class="ml-2 inline-block rounded-full bg-slate-200 px-2 py-0.5 text-xs text-slate-700">
         book review
       </span>
     )}
-    {isPersonal && (
+    {showTags && isPersonal && (
       <span class="ml-2 inline-block rounded-full bg-slate-200 px-2 py-0.5 text-xs text-slate-700">
         personal
       </span>

@@ -1,10 +1,32 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import BlogPost from "../components/BlogPost.astro";
+import type { MarkdownInstance } from "astro";
 
-const astroPosts = await Astro.glob("./posts/astronomy/*.md");
-const reflectionPosts = await Astro.glob("./posts/reflections/*.md");
-const bookPosts = await Astro.glob("./posts/books/**/*.md");
+interface PostFrontmatter {
+  title: string;
+  pubDate: string;
+  tags?: string[];
+}
+
+const astroPosts = Object.values(
+  import.meta.glob<MarkdownInstance<PostFrontmatter>>(
+    "./posts/astronomy/*.md",
+    { eager: true }
+  )
+);
+const reflectionPosts = Object.values(
+  import.meta.glob<MarkdownInstance<PostFrontmatter>>(
+    "./posts/reflections/*.md",
+    { eager: true }
+  )
+);
+const bookPosts = Object.values(
+  import.meta.glob<MarkdownInstance<PostFrontmatter>>(
+    "./posts/books/**/*.md",
+    { eager: true }
+  )
+);
 const allPosts = [...astroPosts, ...reflectionPosts, ...bookPosts].sort(
   (a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime()
 );
